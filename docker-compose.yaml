@@ -3,7 +3,7 @@ services:
   mongo:
     image: mongo
   tweetanalysis:
-    build: ./tweetanalysis
+    image: sario/tweetanalysis
     depends_on:
       - mongo
     volumes:
