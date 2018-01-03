@@ -1,0 +1,4 @@
+oauth2
+mrjob
+pymongo
+urllib3

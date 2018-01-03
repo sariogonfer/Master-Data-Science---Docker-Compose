@@ -1,0 +1,12 @@
+version: '2'
+services:
+  mongo:
+    image: mongo
+  tweetanalysis:
+    build: ./tweetanalysis
+    depends_on:
+      - mongo
+    volumes:
+      - /media:/media
+    links:
+      - mongo:db

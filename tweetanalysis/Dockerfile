@@ -1,0 +1,26 @@
+FROM python:2.7
+
+WORKDIR /usr/src/app
+
+COPY . .
+
+RUN pip install --no-cache -r requeriments.txt
+
+ENV ACCESS_TOKEN_KEY=""
+ENV ACCESS_TOKEN_SECRET=""
+ENV CONSUMER_KEY=""
+ENV CONSUMER_SECRET=""
+ENV SLEEP_TIME=60
+ENV MAX_TWEETS=100
+ENV LOCATION_FILTER=""
+ENV DOWNLOAD_TIME=60
+
+ENV AWS_ACCESS_KEY_ID=""
+ENV AWS_SECRET_ACCESS_KEY=""
+
+ENV MONGODB_HOST="mongo"
+ENV MONGODB_PORT=27017
+ENV MONGODB_DB="tweets_feelings"
+
+CMD ["python", "./code/orchestator.py"]
+
